@@ -38,3 +38,7 @@ Sebelumnya server mengirimkan halaman yang sama untuk semua request. Kini, denga
 Ketika URL `/sleep` diakses, browser akan membutuhkan waktu lebih lama untuk memuat halaman tersebut. Sementara itu, saat saya membuka window kedua dan mengakses /, response tersebut harus menunggu hingga request pertama selesai diproses sebelum dapat meresponse.
 2. Pentingnya mempertimbangkan concurrency dalam server
 Saya menyadari pentingnya design server yang dapat menangani beberapa request secara bersamaan (concurrent requests). Server single thread hanya dapat menangani satu request pada satu waktu, yang dapat menyebabkan penundaan jika ada request yang memakan waktu lama.
+
+## Milestone 5: Implementasi Threadpool
+1. Perbandingan dengan server single thread
+Dengan adanya thread pool, server kini dapat menangani request secara sekaligus, yang sangat mengurangi masalah bottleneck yang terjadi pada pendekatan single thread. Perbedaan ini sangat terasa ketika mengakses /sleep dan / secara bersamaan, di mana server dapat merespons lebih cepat dan efisien.
