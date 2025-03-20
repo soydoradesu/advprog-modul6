@@ -1,4 +1,6 @@
 # Reflection
+Nama: Valentino Kim Fernando
+NPM : 2306275771
 
 ## Milestone 1: Inside `handle_connection`
 1. Menerima parameter TcpStream
@@ -23,3 +25,10 @@ Response yang lengkap disusun dengan memformat status line, header `Content-Leng
 5. Mengirim Response ke Client
 Akhirnya, respons yang telah disusun dikirim ke klien. Data dikirimkan dalam bentuk byte array setelah dikonversi menggunakan `as_bytes()`, dan respons tersebut diteruskan melalui stream menggunakan `write_all()`.
 ![Commit 2 screen capture](/assets/images/commit2.png)
+
+## Milestone 3: Updated `handle_connection`
+1. Memeriksa request line
+Method sekarang memeriksa baris pertama dari HTTP request (request line). Server akan membandingkan apakah request line tersebut adalah GET / HTTP/1.1. Jika cocok, server akan merespons dengan konten dari hello.html. Jika tidak, server akan mengembalikan status 404 dengan halaman 404.html.
+2. Refactor untuk pemisahan logic
+Sebelumnya server mengirimkan halaman yang sama untuk semua request. Kini, dengan memisahkan logic response berdasarkan jenis request, server mampu memberikan respons yang sesuai. Hal ini meningkatkan kemampuan server untuk mengkomunikasikan status yang lebih jelas kepada klien.
+![Commit 3 screen capture](/assets/images/commit3.png)
