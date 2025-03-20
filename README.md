@@ -32,3 +32,9 @@ Method sekarang memeriksa baris pertama dari HTTP request (request line). Server
 2. Refactor untuk pemisahan logic
 Sebelumnya server mengirimkan halaman yang sama untuk semua request. Kini, dengan memisahkan logic response berdasarkan jenis request, server mampu memberikan respons yang sesuai. Hal ini meningkatkan kemampuan server untuk mengkomunikasikan status yang lebih jelas kepada klien.
 ![Commit 3 screen capture](/assets/images/commit3.png)
+
+## Milestone 4: Simulation response lambat
+1. Mengamati dampaknya pada server satu thread
+Ketika URL `/sleep` diakses, browser akan membutuhkan waktu lebih lama untuk memuat halaman tersebut. Sementara itu, saat saya membuka window kedua dan mengakses /, response tersebut harus menunggu hingga request pertama selesai diproses sebelum dapat meresponse.
+2. Pentingnya mempertimbangkan concurrency dalam server
+Saya menyadari pentingnya design server yang dapat menangani beberapa request secara bersamaan (concurrent requests). Server single thread hanya dapat menangani satu request pada satu waktu, yang dapat menyebabkan penundaan jika ada request yang memakan waktu lama.
