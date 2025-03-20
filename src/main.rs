@@ -8,9 +8,13 @@ use std::{
 
 use threadpool::ThreadPool;
 
+fn build_thread_pool(size: usize) -> ThreadPool {
+    ThreadPool::new(size)
+}
+
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-    let pool = ThreadPool::new(4);
+    let pool = build_thread_pool(4);
     
     for stream in listener.incoming() {
         let stream = stream.unwrap();

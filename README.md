@@ -42,3 +42,7 @@ Saya menyadari pentingnya design server yang dapat menangani beberapa request se
 ## Milestone 5: Implementasi Threadpool
 1. Perbandingan dengan server single thread
 Dengan adanya thread pool, server kini dapat menangani request secara sekaligus, yang sangat mengurangi masalah bottleneck yang terjadi pada pendekatan single thread. Perbedaan ini sangat terasa ketika mengakses /sleep dan / secara bersamaan, di mana server dapat merespons lebih cepat dan efisien.
+
+## (Bonus) Function Improvement
+1. Memisahkan logic pembuatan ThreadPool ke dalam function terpisah
+Perubahan ini memisahkan logic pembuatan ThreadPool ke dalam sebuah function khusus. Meskipun perubahan ini terlihat kecil, hal ini meningkatkan fleksibilitas kode. Dengan memisahkan logic ini, kamu dapat dengan mudah mengubah ukuran atau konfigurasi thread pool hanya di satu tempat, tanpa perlu memodifikasi kode di beberapa bagian, yang sejalan dengan prinsip penulisan kode yang bersih dan modular.
